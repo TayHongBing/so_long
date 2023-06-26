@@ -6,7 +6,7 @@
 /*   By: thong-bi <thong-bi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 15:20:33 by jchu              #+#    #+#             */
-/*   Updated: 2023/03/25 00:39:56 by thong-bi         ###   ########.fr       */
+/*   Updated: 2023/06/26 14:41:52 by thong-bi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	idx;
+	int		idx;
 	char	*temp;
 
 	temp = (char *)malloc(sizeof(char) * ft_strlen((char *)s) + 1);
