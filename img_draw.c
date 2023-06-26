@@ -1,42 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   img_draw.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thong-bi <thong-bi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/20 14:17:26 by thong-bi          #+#    #+#             */
-/*   Updated: 2023/03/31 03:53:02 by thong-bi         ###   ########.fr       */
+/*   Created: 2023/03/22 15:11:16 by thong-bi          #+#    #+#             */
+/*   Updated: 2023/03/22 15:17:39 by thong-bi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(int argc, char **argv)
+void	img_draw(t_data *data, void	*img, int x, int y)
 {
-	t_data	data;
-
-	setbuf(stdout, NULL);
-	if (argc == 2)
-	{
-		data.window.map = read_map(argv[1]);
-		if (check_map(&data, data.window.map, argv[1]))
-		{
-			initializer(&data);
-			hook_all(&data);
-			mlx_loop(data.mlx_ptr);
-		}
-		else
-		{
-			printf("\nERROR\nInvalid map!\n");
-			free_map(&data);
-			exit(1);
-		}
-	}
-	else
-	{
-		printf("\nError: No map specified\n");
-		exit(1);
-	}
-	return (0);
+	mlx_put_image_to_window(data->mlx_ptr, data->window.win_ptr, img,
+		x * SPRITE_SIZE, y * SPRITE_SIZE);
 }
