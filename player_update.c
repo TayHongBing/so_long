@@ -6,7 +6,7 @@
 /*   By: thong-bi <thong-bi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 16:16:56 by thong-bi          #+#    #+#             */
-/*   Updated: 2023/03/31 03:34:32 by thong-bi         ###   ########.fr       */
+/*   Updated: 2023/06/26 14:40:52 by thong-bi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	update_direction(int keycode, t_data *data)
 	else
 		return ;
 }
-
 
 void	map_hook_p(t_data *data, int j, int i)
 {
