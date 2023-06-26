@@ -6,7 +6,7 @@
 /*   By: thong-bi <thong-bi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 00:40:54 by thong-bi          #+#    #+#             */
-/*   Updated: 2023/06/26 15:29:32 by thong-bi         ###   ########.fr       */
+/*   Updated: 2023/06/26 15:33:55 by thong-bi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,7 @@ static int	check_wall(t_data *data, char **map)
 		{
 			if (map[0][j] != '1' || map[data->window.row - 1][j] != '1'
 				|| map[i][0] != '1' || map[i][data->window.col - 1] != '1')
-			{
-				printf("wall");
 				return (0);
-			}
 			j++;
 		}
 		if (j != data->window.col)
@@ -65,10 +62,7 @@ static int	check_counter(t_data *data, char **map)
 	}
 	if (data->window.exit != 1 || data->window.player != 1
 		|| data->window.coin == 0)
-	{
-		printf("counter");
 		return (0);
-	}
 	return (1);
 }
 
@@ -85,10 +79,7 @@ static int	check_content(t_data *data, char **map)
 		{
 			if (map[i][j] != '0' && map[i][j] != '1' && map[i][j] != 'C'
 				&& map[i][j] != 'E' && map[i][j] != 'P')
-			{
-				printf("content");
 				return (0);
-			}
 			j++;
 		}
 		i++;
