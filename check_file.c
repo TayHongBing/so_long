@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   img_draw.c                                         :+:      :+:    :+:   */
+/*   check_file.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thong-bi <thong-bi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/22 15:11:16 by thong-bi          #+#    #+#             */
-/*   Updated: 2023/03/22 15:17:39 by thong-bi         ###   ########.fr       */
+/*   Created: 2023/06/15 18:40:42 by thong-bi          #+#    #+#             */
+/*   Updated: 2023/06/20 15:19:30 by thong-bi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	img_draw(t_data *data, void	*img, int x, int y)
+void	check_extension(char *file)
 {
-	mlx_put_image_to_window(data->mlx_ptr, data->window.win_ptr, img,
-		x * SPRITE_SIZE, y * SPRITE_SIZE);
+	char	*extension;
+
+	if (!file)
+		exit(1);
+	extension = ft_strrchr(file, '.');
+	if (ft_strncmp(extension, ".ber", 5))
+		return ;
+	printf("ERROR: file is not valid");
+	exit(1);
 }
