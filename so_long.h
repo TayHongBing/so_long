@@ -6,7 +6,7 @@
 /*   By: thong-bi <thong-bi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 15:35:00 by thong-bi          #+#    #+#             */
-/*   Updated: 2023/06/29 17:22:14 by thong-bi         ###   ########.fr       */
+/*   Updated: 2023/07/03 14:40:35 by thong-bi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,3 +44,6 @@ void	check_extension(char *file);
 int		get_height(char **map);
 char	**read_map(char *argv);
 void	free_map(t_data *data, char **err);
+void	check_map(t_data *data);
+void	initialize(t_data *data);
+void	render_map(t_data *data);
