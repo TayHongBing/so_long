@@ -6,7 +6,7 @@
 /*   By: thong-bi <thong-bi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 14:17:39 by thong-bi          #+#    #+#             */
-/*   Updated: 2023/07/03 14:40:29 by thong-bi         ###   ########.fr       */
+/*   Updated: 2023/07/04 17:22:07 by thong-bi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	put_image(t_data *data, int x, int y, char *img)
 	int	width;
 	int	height;
 
-	data->img = mlx_xpm_file_to_image(data->mlx, img, &width, height);
+	data->img = mlx_xpm_file_to_image(data->mlx, img, &width, &height);
 	mlx_put_image_to_window(data->mlx, data->win, data->img, x, y);
 }
 
@@ -28,7 +28,7 @@ void	put_to_map(char position, int x, int y, t_data *data)
 	else if (position == 'C')
 	{
 		put_image(data, x, y, "./img/floor.xpm");
-		put_image(data, x, y, "./img/collect.xpm");
+		put_image(data, x, y, "./img/coin.xpm");
 		data->collect++;
 	}
 	else if (position == 'E')

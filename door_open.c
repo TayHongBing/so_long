@@ -1,46 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_file.c                                       :+:      :+:    :+:   */
+/*   door_open.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thong-bi <thong-bi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/15 18:40:42 by thong-bi          #+#    #+#             */
-/*   Updated: 2023/07/04 17:28:41 by thong-bi         ###   ########.fr       */
+/*   Created: 2023/07/04 15:27:47 by thong-bi          #+#    #+#             */
+/*   Updated: 2023/07/04 15:29:25 by thong-bi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static int	find(char *str, char *to_find)
+void	door_open(t_data *data)
 {
-	int	i;
+	int	x;
 
-	i = 0;
-	while (to_find[i])
+	x = 0;
+	while (data->map[x])
 	{
-		if (to_find[i] != str[i])
-			return (0);
-		i++;
+		free(data->map[x]);
+		x++;
 	}
-	if (str[i] == '\0')
-		return (1);
-	return (0);
-}
-
-void	check_extension(char *file_line)
-{
-	while (*file_line)
-	{
-		if (*file_line == '.')
-		{
-			if (find(file_line, ".ber"))
-			{
-				return ;
-			}
-		}
-		file_line++;
-	}
-	printf("\033[1;31m🛑ERROR: file is not valid\033[0m");
+	free(data->map);
+	mlx_destroy_window(data->mlx, data->win);
 	exit(1);
 }
