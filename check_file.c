@@ -6,7 +6,7 @@
 /*   By: thong-bi <thong-bi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 18:40:42 by thong-bi          #+#    #+#             */
-/*   Updated: 2023/07/04 17:28:41 by thong-bi         ###   ########.fr       */
+/*   Updated: 2023/07/06 14:18:06 by thong-bi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,6 @@ void	check_extension(char *file_line)
 		}
 		file_line++;
 	}
-	printf("\033[1;31m🛑ERROR: file is not valid\033[0m");
+	printf("ERROR: file is not valid");
 	exit(1);
 }
