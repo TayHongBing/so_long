@@ -6,7 +6,7 @@
 /*   By: thong-bi <thong-bi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 15:02:08 by thong-bi          #+#    #+#             */
-/*   Updated: 2023/07/05 18:34:17 by thong-bi         ###   ########.fr       */
+/*   Updated: 2023/09/12 16:18:22 by thong-bi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	update_collect(t_data ***data)
 
 	(**data)->collect--;
 	(**data)->map[((**data)->player_y / 50)][((**data)->player_x / 50)] = '0';
-	(**data)->img = mlx_xpm_file_to_image((**data)->mlx, "./img/floor.xpm",
+	(**data)->img = mlx_xpm_file_to_image((**data)->mlx, "./img2/floor.xpm",
 			&width, &height);
 	mlx_put_image_to_window((**data)->mlx, (**data)->win, (**data)->img,
 		(**data)->player_x, (**data)->player_y);
@@ -30,7 +30,7 @@ void	move_left(t_data **d)
 	int	width;
 	int	height;
 
-	(*d)->img = mlx_xpm_file_to_image((*d)->mlx, "./img/floor.xpm",
+	(*d)->img = mlx_xpm_file_to_image((*d)->mlx, "./img2/floor.xpm",
 			&width, &height);
 	mlx_put_image_to_window((*d)->mlx, (*d)->win, (*d)->img,
 		(*d)->player_x, (*d)->player_y);
@@ -46,7 +46,7 @@ void	move_left(t_data **d)
 	}
 	if ((*d)->map[((*d)->player_y / 50)][((*d)->player_x / 50)] == 'C')
 		update_collect(&d);
-	(*d)->img = mlx_xpm_file_to_image((*d)->mlx, "./img/left.xpm",
+	(*d)->img = mlx_xpm_file_to_image((*d)->mlx, "./img2/front.xpm",
 			&width, &height);
 	mlx_put_image_to_window((*d)->mlx, (*d)->win, (*d)->img,
 		(*d)->player_x, (*d)->player_y);
@@ -57,7 +57,7 @@ void	move_right(t_data **d)
 	int	width;
 	int	height;
 
-	(*d)->img = mlx_xpm_file_to_image((*d)->mlx, "./img/floor.xpm",
+	(*d)->img = mlx_xpm_file_to_image((*d)->mlx, "./img2/floor.xpm",
 			&width, &height);
 	mlx_put_image_to_window((*d)->mlx, (*d)->win, (*d)->img,
 		(*d)->player_x, (*d)->player_y);
@@ -73,7 +73,7 @@ void	move_right(t_data **d)
 	}
 	if ((*d)->map[((*d)->player_y / 50)][((*d)->player_x / 50)] == 'C')
 		update_collect(&d);
-	(*d)->img = mlx_xpm_file_to_image((*d)->mlx, "./img/right.xpm",
+	(*d)->img = mlx_xpm_file_to_image((*d)->mlx, "./img2/front.xpm",
 			&width, &height);
 	mlx_put_image_to_window((*d)->mlx, (*d)->win, (*d)->img,
 		(*d)->player_x, (*d)->player_y);
@@ -84,7 +84,7 @@ void	move_up(t_data **d)
 	int	width;
 	int	height;
 
-	(*d)->img = mlx_xpm_file_to_image((*d)->mlx, "./img/floor.xpm",
+	(*d)->img = mlx_xpm_file_to_image((*d)->mlx, "./img2/floor.xpm",
 			&width, &height);
 	mlx_put_image_to_window((*d)->mlx, (*d)->win, (*d)->img,
 		(*d)->player_x, (*d)->player_y);
@@ -100,7 +100,7 @@ void	move_up(t_data **d)
 	}
 	if ((*d)->map[((*d)->player_y / 50)][((*d)->player_x / 50)] == 'C')
 		update_collect(&d);
-	(*d)->img = mlx_xpm_file_to_image((*d)->mlx, "./img/back.xpm",
+	(*d)->img = mlx_xpm_file_to_image((*d)->mlx, "./img2/front.xpm",
 			&width, &height);
 	mlx_put_image_to_window((*d)->mlx, (*d)->win, (*d)->img,
 		(*d)->player_x, (*d)->player_y);
@@ -111,7 +111,7 @@ void	move_down(t_data **d)
 	int	width;
 	int	height;
 
-	(*d)->img = mlx_xpm_file_to_image((*d)->mlx, "./img/floor.xpm",
+	(*d)->img = mlx_xpm_file_to_image((*d)->mlx, "./img2/floor.xpm",
 			&width, &height);
 	mlx_put_image_to_window((*d)->mlx, (*d)->win, (*d)->img,
 		(*d)->player_x, (*d)->player_y);
@@ -127,7 +127,7 @@ void	move_down(t_data **d)
 	}
 	if ((*d)->map[((*d)->player_y / 50)][((*d)->player_x / 50)] == 'C')
 		update_collect(&d);
-	(*d)->img = mlx_xpm_file_to_image((*d)->mlx, "./img/front.xpm",
+	(*d)->img = mlx_xpm_file_to_image((*d)->mlx, "./img2/front.xpm",
 			&width, &height);
 	mlx_put_image_to_window((*d)->mlx, (*d)->win, (*d)->img,
 		(*d)->player_x, (*d)->player_y);

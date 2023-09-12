@@ -6,7 +6,7 @@
 /*   By: thong-bi <thong-bi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 17:12:36 by thong-bi          #+#    #+#             */
-/*   Updated: 2023/07/05 18:36:58 by thong-bi         ###   ########.fr       */
+/*   Updated: 2023/09/12 16:20:23 by thong-bi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	open_exit(t_data **data)
 			if ((*data)->map[y][x] == 'E')
 			{
 				(*data)->img = mlx_xpm_file_to_image(
-						(*data)->mlx, "./img/o_exit.xpm", &img_w, &img_h);
+						(*data)->mlx, "./img2/exit.xpm", &img_w, &img_h);
 				mlx_put_image_to_window(
 					(*data)->mlx, (*data)->win, (*data)->img, x * 50, y * 50);
 			}

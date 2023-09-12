@@ -6,7 +6,7 @@
 /*   By: thong-bi <thong-bi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 14:17:39 by thong-bi          #+#    #+#             */
-/*   Updated: 2023/07/05 15:12:55 by thong-bi         ###   ########.fr       */
+/*   Updated: 2023/09/12 16:19:02 by thong-bi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,24 +24,24 @@ void	put_image(t_data ***data, int x, int y, char *img)
 void	put_to_map(char position, int x, int y, t_data **data)
 {
 	if (position == '1')
-		put_image(&data, x, y, "./img/wall.xpm");
+		put_image(&data, x, y, "./img2/wall.xpm");
 	else if (position == 'C')
 	{
-		put_image(&data, x, y, "./img/floor.xpm");
-		put_image(&data, x, y, "./img/coin.xpm");
+		put_image(&data, x, y, "./img2/floor.xpm");
+		put_image(&data, x, y, "./img2/coin.xpm");
 		(*data)->collect++;
 	}
 	else if (position == 'E')
-		put_image(&data, x, y, "./img/exit.xpm");
+		put_image(&data, x, y, "./img2/exit.xpm");
 	else if (position == 'P')
 	{
 		(*data)->player_y = y;
 		(*data)->player_x = x;
-		put_image(&data, x, y, "./img/floor.xpm");
-		put_image(&data, x, y, "./img/front.xpm");
+		put_image(&data, x, y, "./img2/floor.xpm");
+		put_image(&data, x, y, "./img2/front.xpm");
 	}
 	else
-		put_image(&data, x, y, "./img/floor.xpm");
+		put_image(&data, x, y, "./img2/floor.xpm");
 }
 
 void	render_map(t_data *data)

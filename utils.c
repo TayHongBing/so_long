@@ -6,7 +6,7 @@
 /*   By: thong-bi <thong-bi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 14:11:44 by thong-bi          #+#    #+#             */
-/*   Updated: 2023/07/05 18:01:01 by thong-bi         ###   ########.fr       */
+/*   Updated: 2023/09/12 15:16:14 by thong-bi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	update_move(t_data ***data)
 
 	num = ft_itoa(++(**data)->move);
 	text = ft_join_strings("Move: ", num);
-	(**data)->img = mlx_xpm_file_to_image((**data)->mlx, "./img/wall.xpm",
+	(**data)->img = mlx_xpm_file_to_image((**data)->mlx, "./img2/wall.xpm",
 			&width, &height);
 	mlx_put_image_to_window((**data)->mlx, (**data)->win, (**data)->img, 0, 0);
 	mlx_put_image_to_window((**data)->mlx, (**data)->win, (**data)->img, 50, 0);

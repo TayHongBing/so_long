@@ -6,7 +6,7 @@
 /*   By: thong-bi <thong-bi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 16:57:36 by thong-bi          #+#    #+#             */
-/*   Updated: 2023/07/05 18:38:52 by thong-bi         ###   ########.fr       */
+/*   Updated: 2023/09/12 16:18:34 by thong-bi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	render_img(t_data **data)
 	(*data)->e_data.imgs[3] = "./img/2.xpm";
 	(*data)->e_data.imgs[4] = "./img/1.xpm";
 	(*data)->img = mlx_xpm_file_to_image(
-			(*data)->mlx, "./img/floor.xpm", &img_w, &img_h);
+			(*data)->mlx, "./img2/floor.xpm", &img_w, &img_h);
 	mlx_put_image_to_window(
 		(*data)->mlx, (*data)->win, (*data)->img,
 		(*data)->e_data.enemy_x * 50, (*data)->e_data.enemy_y * 50);
@@ -41,7 +41,7 @@ void	move_enemy(t_data **d)
 	int			img_h;
 
 	(*d)->img = mlx_xpm_file_to_image(
-			(*d)->mlx, "./img/floor.xpm", &img_w, &img_h);
+			(*d)->mlx, "./img2/floor.xpm", &img_w, &img_h);
 	mlx_put_image_to_window(
 		(*d)->mlx, (*d)->win, (*d)->img,
 		(*d)->e_data.enemy_x * 50, (*d)->e_data.enemy_y * 50);
@@ -95,7 +95,7 @@ int	animation(t_data *data)
 		if ((data->e_data.enemy_y == data->player_y / 50)
 			&& (data->e_data.enemy_x == data->player_x / 50))
 		{
-			ft_lose(&data, "You Lose :(");
+			ft_lose(&data, "You Lose :(\n");
 		}
 		render_img(&data);
 	}
